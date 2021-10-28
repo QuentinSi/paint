@@ -5,22 +5,23 @@ public class Ellipse extends Figure {
     protected int semiAxysX;
     protected int semiAxysY;
 
-    protected Ellipse( Color color, Point origine,int px, int py){
+    public Ellipse( Color color,int px, int py){
         super();
         c=color;
-        this.origine=origine;
-        setBoundingBox(px,py);
+        setBoundingBox(0,0);
 
     }
 
     @Override
     protected void setBoundingBox(int heightBB, int widthBB) {
-    semiAxysX=heightBB/2;
-    semiAxysY=widthBB/2;
+    semiAxysX=widthBB;
+    semiAxysY=heightBB;
     }
 
     @Override
     protected void draw(Graphics g) {
+        g.setColor(c);
+        g.fillOval(origine.getX(), origine.getY(), semiAxysX, semiAxysY);
 
     }
 
@@ -29,7 +30,23 @@ public class Ellipse extends Figure {
         return "Ellipse{" +
                 "semiAxysX=" + semiAxysX +
                 ", semiAxysY=" + semiAxysY +
-                ", c=" + c +
+                ", c=" + c + "origine"+ origine+
                 '}';
+    }
+
+    public int getSemiAxysX() {
+        return semiAxysX;
+    }
+
+    public int getSemiAxysY() {
+        return semiAxysY;
+    }
+
+    public void setSemiAxysX(int semiAxysX) {
+        this.semiAxysX = semiAxysX;
+    }
+
+    public void setSemiAxysY(int semiAxysY) {
+        this.semiAxysY = semiAxysY;
     }
 }

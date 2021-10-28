@@ -6,8 +6,6 @@ public abstract class Figure {
     protected abstract void setBoundingBox(int heightBB, int widthBB);
     protected abstract void draw (Graphics g);
     protected Color c;
-    protected int width;
-    protected int length;
     protected Point origine;
 
     public Figure(Color color,Point point ){
@@ -17,7 +15,7 @@ public abstract class Figure {
     }
     public Figure(){
         c=Color.black;
-        origine=new Point(0,0);
+        origine=null;
     }
 
     public Color getC() {
@@ -30,6 +28,6 @@ public abstract class Figure {
 
     @Override
     public String toString() {
-        return "Figure{c=" + c +", width=" + width +", length=" + length + '}';
+        return "Figure{c=" + c + '}';
     }
 }
