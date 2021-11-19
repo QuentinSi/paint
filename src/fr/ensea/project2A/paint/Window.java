@@ -1,6 +1,14 @@
 package fr.ensea.project2A.paint;
 import java.awt.*;
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
@@ -36,6 +44,11 @@ public class Window extends JFrame implements  ActionListener{
          open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O,KeyEvent.CTRL_DOWN_MASK));
          open.addActionListener(this);
 
+         JMenuItem undo = new JMenuItem("undo");
+         undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,KeyEvent.CTRL_DOWN_MASK));
+         undo.addActionListener(this);
+
+
          JMenuItem quit = new JMenuItem("Quit");
          quit.setAccelerator(KeyStroke.getKeyStroke ((char) KeyEvent.VK_Q,KeyEvent.CTRL_DOWN_MASK));
          quit.addActionListener(this);
@@ -43,6 +56,7 @@ public class Window extends JFrame implements  ActionListener{
          menu1.add(news);
          menu1.add(open);
          menu1.add(saveMenu);
+         menu1.add(undo);
          menu1.add(quit);
          principal.add(menu1);
 
@@ -179,6 +193,7 @@ public class Window extends JFrame implements  ActionListener{
                                       System.out.println("Open selectionné"); break;
                         case "Quit" : System.exit(0);System.out.println("Quit selectionné");break;
                         case "New" : draw.getList().clear();repaint();System.out.println("New selectionné");break;
+                        case "undo" : draw.back_one_step();break;
                         default : break;
                 }
         }

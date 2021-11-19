@@ -27,24 +27,24 @@ public class Square extends Rectangle{
         }
     }
     @Override
-    protected void setBoundingBox(Point origin, Point second) {
-        super.setBoundingBox(origin, second);
+    protected void setBoundingBox(Point first, Point second) {
+        super.setBoundingBox(first, second);
         if (width < length) {
             length = width;
 
-            if (origin.getX() < second.getX() & second.getY() < origin.getY()) { // tire en haut à droite
-                super.origine.setY(origin.getY() - length);
+            if (first.getX() < second.getX() & second.getY() < first.getY()) { // tire en haut à droite
+                super.origine.setY(first.getY() - length);
 
-            } else if (second.getX() < origin.getX() & second.getY() < origin.getY()) { // tire en haut à gauche
-                super.origine.setY(origin.getY() - length);
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+                super.origine.setY(first.getY() - length);
             }
         } else {
             width = length;
 
-            if (second.getX() < origin.getX() & origin.getY() < second.getY()) { // Tire en bas a à gauche
-                super.origine.setX(origin.getX() - width);
-            } else if (second.getX() < origin.getX() & second.getY() < origin.getY()) { // tire en haut à gauche
-                super.origine.setX(origin.getX() - width);
+            if (second.getX() < first.getX() & first.getY() < second.getY()) { // Tire en bas a à gauche
+                super.origine.setX(first.getX() - width);
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+                super.origine.setX(first.getX() - width);
             }
         }
     }

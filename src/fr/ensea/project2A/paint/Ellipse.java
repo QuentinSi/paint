@@ -1,5 +1,6 @@
 package fr.ensea.project2A.paint;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public class Ellipse extends Figure {
     protected int semiAxysX;
@@ -19,30 +20,33 @@ public class Ellipse extends Figure {
     }
 
     @Override
-    protected void setBoundingBox(Point origin, Point second) {
-        if (origin.getX() < second.getX() & origin.getY() < second.getY()) {
-            semiAxysX = (second.getX() - origin.getX()) ;
-            semiAxysY = (second.getY() - origin.getY()) ;
-        } else if (origin.getX() < second.getX() & second.getY() < origin.getX()) {
-            Point originBis = new Point(origin.getX(), second.getY());
-            Point secondBis = new Point(second.getX(), origin.getY());
-            super.origine = originBis;
-            semiAxysX = (secondBis.getX() - originBis.getX()) ;
-            semiAxysY = (secondBis.getY() - originBis.getY()) ;
-        } else if (second.getX() < origin.getX() & origin.getY() < second.getY()) {
-            Point originBis = new Point(second.getX(), origin.getY());
-            Point secondBis = new Point(origin.getX(), second.getY());
-            super.origine = originBis;
-            semiAxysX = (secondBis.getX() - originBis.getX()) ;
-            semiAxysY = (secondBis.getY() - originBis.getY()) ;
-        } else if (second.getX() < origin.getX() & second.getY() < origin.getY()) {
-            Point originBis = new Point(second.getX(), second.getY());
-            Point secondBis = new Point(origin.getX(), origin.getY());
-            super.origine = originBis;
-            semiAxysX = (secondBis.getX() - originBis.getX()) ;
-            semiAxysY = (secondBis.getY() - originBis.getY()) ;
+    protected void setBoundingBox(Point first, Point second) {
+        if (first.getX() < second.getX() & first.getY() < second.getY()) {
+            semiAxysX = (second.getX() - first.getX());
+            semiAxysY = (second.getY() - first.getY());
+        }
+        //probleme dans cette partie
+        else if (first.getX() < second.getX() & second.getY() < first.getX()) {
+            Point firstBis = new Point(first.getX(), second.getY());
+            Point secondBis = new Point(second.getX(), first.getY());
+            super.origine = firstBis;
+            semiAxysX = (secondBis.getX() - firstBis.getX());
+            semiAxysY = (secondBis.getY() - firstBis.getY());
+        } else if (second.getX() < first.getX() & second.getY() < first.getY()) {
+            Point firstBis = new Point(second.getX(), second.getY());
+            Point secondBis = new Point(first.getX(), first.getY());
+            super.origine = firstBis;
+            semiAxysX = (secondBis.getX() - firstBis.getX());
+            semiAxysY = (secondBis.getY() - firstBis.getY());
+        }else if (second.getX() < first.getX() & first.getY() < second.getY()) {
+            Point firstBis = new Point(second.getX(), first.getY());
+            Point secondBis = new Point(first.getX(), second.getY());
+            super.origine = firstBis;
+            semiAxysX = (secondBis.getX() - firstBis.getX());
+            semiAxysY = (secondBis.getY() - firstBis.getY());
         }
     }
+
 
     @Override
     protected void draw(Graphics g) {
@@ -59,19 +63,8 @@ public class Ellipse extends Figure {
                 '}';
     }
 
-    public int getSemiAxysX() {
-        return semiAxysX;
-    }
-
-    public int getSemiAxysY() {
-        return semiAxysY;
-    }
-
-    public void setSemiAxysX(int semiAxysX) {
-        this.semiAxysX = semiAxysX;
-    }
-
-    public void setSemiAxysY(int semiAxysY) {
-        this.semiAxysY = semiAxysY;
+    @Override
+    public void setOrigine(Point origin) {
+        super.setOrigine(origin);
     }
 }

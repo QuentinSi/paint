@@ -24,10 +24,10 @@ public class Draw extends JPanel implements MouseMotionListener, MouseListener, 
         this.list = new ArrayList<Figure>();
         x=0;
         y=0;
-        figureName=null;
+        figureName="Rectangle";
         addMouseListener(this);
         addMouseMotionListener(this);
-        c=Color.white;
+        c=Color.black;
 
     }
 
@@ -89,12 +89,11 @@ public class Draw extends JPanel implements MouseMotionListener, MouseListener, 
         this.setBackground(Color.white);
         for(Figure f : list){
             f.draw(g);
-            this.repaint();
         }
     }
 
     public void back_one_step(){
-        list.remove(list.size()-1);
+        list.remove(list.size()-1); repaint();
     }
 
     public void savedrawing(String FileName){
@@ -132,9 +131,5 @@ public class Draw extends JPanel implements MouseMotionListener, MouseListener, 
         this.figureName=figureName;
     }
     public ArrayList<Figure> getList() { return list; }
-    public void setC(){}
-    public void setList(ArrayList<Figure> list) { this.list = list; }
-    public void setC(Color c) { this.c = c; }
-    public void setX(){}
-    public void setY(int y) { this.y = y; }
+
 }

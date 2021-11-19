@@ -19,31 +19,31 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    protected void setBoundingBox(Point origin, Point second) {
-        if(origin.getX() < second.getX() & origin.getY()<second.getY()){ //tire vers en bas à droite
-            width=(second.getX()- origin.getX());
-            length=(second.getY()-origin.getY());
+    protected void setBoundingBox(Point first, Point second) {
+        if(first.getX() < second.getX() & first.getY()<second.getY()){ //tire vers en bas à droite
+            width=(second.getX()- first.getX());
+            length=(second.getY()-first.getY());
         }
-        else if(origin.getX()< second.getX() & second.getY()< origin.getY()){ // tire en haut à droite
-            Point originBis=new Point(origin.getX(), second.getY());
-            Point secondBis= new Point (second.getX(),origin.getY());
-            super.origine=originBis;
-            width=(secondBis.getX()- originBis.getX());
-            length=(secondBis.getY()-originBis.getY());
+        else if(first.getX()< second.getX() & second.getY()< first.getY()){ // tire en haut à droite
+            Point firstBis=new Point(first.getX(), second.getY());
+            Point secondBis= new Point (second.getX(),first.getY());
+            super.origine=firstBis;
+            width=(secondBis.getX()- firstBis.getX());
+            length=(secondBis.getY()-firstBis.getY());
         }
-        else if(second.getX()< origin.getX() & origin.getY()< second.getY()){ // Tire en bas a à gauche
-            Point originBis= new Point (second.getX(), origin.getY());
-            Point secondBis= new Point (origin.getX(), second.getY());
-            super.origine=originBis;
-            width=(secondBis.getX()-originBis.getX());
-            length=(secondBis.getY()- originBis.getY());
+        else if(second.getX()< first.getX() & first.getY()< second.getY()){ // Tire en bas a à gauche
+            Point firstBis= new Point (second.getX(), first.getY());
+            Point secondBis= new Point (first.getX(), second.getY());
+            super.origine=firstBis;
+            width=(secondBis.getX()-firstBis.getX());
+            length=(secondBis.getY()- firstBis.getY());
         }
-        else if (second.getX()< origin.getX() & second.getY()< origin.getY()){ // tire en haut à gauche
-            Point originBis= new Point (second.getX(), second.getY());
-            Point secondBis= new Point (origin.getX(), origin.getY());
-            super.origine=originBis;
-            width=(secondBis.getX()-originBis.getX());
-            length=(secondBis.getY()- originBis.getY());
+        else if (second.getX()< first.getX() & second.getY()< first.getY()){ // tire en haut à gauche
+            Point firstBis= new Point (second.getX(), second.getY());
+            Point secondBis= new Point (first.getX(), first.getY());
+            super.origine=firstBis;
+            width=(secondBis.getX()-firstBis.getX());
+            length=(secondBis.getY()- firstBis.getY());
         }
     }
 

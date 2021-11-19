@@ -32,4 +32,12 @@ public abstract class Figure implements Serializable {
     public void setC(Color c) {
         this.c = c;
     }
+
+    public Point getOrigine() {
+        return origine;
+    }
+
+    public void setOrigine(Point origine) {
+        this.origine = origine;
+    }
 }

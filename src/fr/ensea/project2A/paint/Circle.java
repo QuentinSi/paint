@@ -6,7 +6,7 @@ public class Circle extends Ellipse {
 
     public Circle(Color color,int px, int py) {
         super(color, px, py);
-        setBoundingBox(0, 0);
+        setBoundingBox(0,0);
     }
 
     @Override
@@ -28,24 +28,24 @@ public class Circle extends Ellipse {
         }
     }
     @Override
-    protected void setBoundingBox(Point origin, Point second) {
-        super.setBoundingBox(origin, second);
+    protected void setBoundingBox(Point first, Point second) {
+        super.setBoundingBox(first, second);
         if (semiAxysX < semiAxysY) {
             semiAxysY = semiAxysX;
 
-            if (origin.getX() < second.getX() & second.getY() < origin.getY()) { // tire en haut à droite
-                super.origine.setY(origin.getY() - semiAxysY);
+            if (first.getX() < second.getX() & second.getY() < first.getY()) { // tire en haut à droite
+                super.origine.setY(first.getY() - semiAxysY);
 
-            } else if (second.getX() < origin.getX() & second.getY() < origin.getY()) { // tire en haut à gauche
-                super.origine.setY(origin.getY() - semiAxysY );
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+                super.origine.setY(first.getY() - semiAxysY );
             }
         } else {
             semiAxysX = semiAxysY;
 
-            if (second.getX() < origin.getX() & origin.getY() < second.getY()) { // Tire en bas a à gauche
-                super.origine.setX(origin.getX() - semiAxysX );
-            } else if (second.getX() < origin.getX() & second.getY() < origin.getY()) { // tire en haut à gauche
-                super.origine.setX(origin.getX() - semiAxysX );
+            if (second.getX() < first.getX() & first.getY() < second.getY()) { // Tire en bas a à gauche
+                super.origine.setX(first.getX() - semiAxysX );
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+                super.origine.setX(first.getX() - semiAxysX );
             }
         }
     }
