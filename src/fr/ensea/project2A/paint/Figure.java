@@ -5,9 +5,6 @@ import java.io.Serializable;
 
 public abstract class Figure implements Serializable {
 
-    protected abstract void setBoundingBox(int heightBB, int widthBB);
-    protected abstract void setBoundingBox(Point un, Point deux);
-    protected abstract void draw (Graphics g);
     protected Color c;
     protected Point origine;
 
@@ -18,8 +15,12 @@ public abstract class Figure implements Serializable {
 
     public Figure(){
         c=Color.black;
-        origine=null;
+        origine=new Point (0,0);
     }
+
+    protected abstract void setBoundingBox(int heightBB, int widthBB);
+    protected abstract void setBoundingBox(Point un, Point deux);
+    protected abstract void draw (Graphics g);
 
     @Override
     public String toString() {

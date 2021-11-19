@@ -26,7 +26,7 @@ public class Ellipse extends Figure {
             semiAxysY = (second.getY() - first.getY());
         }
         //probleme dans cette partie
-        else if (first.getX() < second.getX() & second.getY() < first.getX()) {
+        else if (first.getX() < second.getX() & second.getY() < first.getY()) {
             Point firstBis = new Point(first.getX(), second.getY());
             Point secondBis = new Point(second.getX(), first.getY());
             super.origine = firstBis;
