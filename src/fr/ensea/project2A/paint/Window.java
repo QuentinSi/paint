@@ -72,26 +72,26 @@ public class Window extends JFrame implements  ActionListener{
          black.setForeground(Color.WHITE);
          black.addActionListener(this);
 
-         JButton rouge= new JButton("rouge");
-         rouge.setBackground(Color.red);
-         rouge.addActionListener(this);
+         JButton red= new JButton("red");
+         red.setBackground(Color.red);
+         red.addActionListener(this);
 
-         JButton vert= new JButton("vert");
-         vert.setBackground(Color.green);
-         vert.addActionListener(this);
+         JButton green= new JButton("green");
+         green.setBackground(Color.green);
+         green.addActionListener(this);
 
-         JButton bleu= new JButton("bleu");
-         bleu.setBackground(Color.BLUE);;
-         bleu.setForeground(Color.WHITE);
-         bleu.addActionListener(this);
+         JButton blue= new JButton("blue");
+         blue.setBackground(Color.BLUE);;
+         blue.setForeground(Color.WHITE);
+         blue.addActionListener(this);
 
-         JButton jaune= new JButton("jaune");
-         jaune.setBackground(Color.YELLOW);
-         jaune.addActionListener(this);
+         JButton yellow= new JButton("yellow");
+         yellow.setBackground(Color.YELLOW);
+         yellow.addActionListener(this);
 
-         JButton rose= new JButton("rose");
-         rose.setBackground(Color.PINK);
-         rose.addActionListener(this);
+         JButton pink= new JButton("pink");
+         pink.setBackground(Color.PINK);
+         pink.addActionListener(this);
 
          JButton magenta= new JButton("magenta");
          magenta.setBackground(Color.MAGENTA);
@@ -118,11 +118,11 @@ public class Window extends JFrame implements  ActionListener{
          JPanel p_gauche = new JPanel();
          p_gauche.setLayout(new GridLayout(2,4));
          p_gauche.add(black);
-         p_gauche.add(rouge);
-         p_gauche.add(vert);
-         p_gauche.add(bleu);
-         p_gauche.add(jaune);
-         p_gauche.add(rose);
+         p_gauche.add(red);
+         p_gauche.add(green);
+         p_gauche.add(blue);
+         p_gauche.add(yellow);
+         p_gauche.add(pink);
          p_gauche.add(magenta);
          p_gauche.add(orange);
 
@@ -150,28 +150,28 @@ public class Window extends JFrame implements  ActionListener{
                 String cmd = e.getActionCommand();
 
                 switch(cmd) {
-                        case"black" :draw.setColor(Color.black);System.out.println("noir selectionné");break;
-                        case"rouge" :draw.setColor(Color.red);System.out.println("rouge selectionné");break;
-                        case"bleu" : draw.setColor(Color.blue); System.out.println("bleu selectionné");;break;
-                        case"vert" : draw.setColor(Color.green); System.out.println("vert selectionné");break;
-                        case"jaune" : draw.setColor(Color.yellow); System.out.println("jaune selectionné");break;
-                        case"rose" : draw.setColor(Color.pink);System.out.println("rose selectionné");break;
-                        case"magenta" : draw.setColor(Color.magenta);System.out.println("magenta selectionné");break;
-                        case"orange" : draw.setColor(Color.orange);System.out.println("orange selectionné");break;
+                        case"black" :draw.setColor(Color.black);System.out.println("black selected");break;
+                        case"red" :draw.setColor(Color.red);System.out.println("red selected");break;
+                        case"blud" : draw.setColor(Color.blue); System.out.println("blue selected");;break;
+                        case"green" : draw.setColor(Color.green); System.out.println("green selected");break;
+                        case"yellow" : draw.setColor(Color.yellow); System.out.println("yellow selected");break;
+                        case"pink" : draw.setColor(Color.pink);System.out.println("pink selected");break;
+                        case"magenta" : draw.setColor(Color.magenta);System.out.println("magenta selected");break;
+                        case"orange" : draw.setColor(Color.orange);System.out.println("orange selected");break;
 
-                        case"paintRectangle" : System.out.println("rectangle selectionné");
+                        case"paintRectangle" : System.out.println("rectangle selected");
                                                draw.setFigureName("Rectangle");
                                                break;
-                        case"paintCarre" : System.out.println("carre selectionné");
+                        case"paintCarre" : System.out.println("square selected");
                                            draw.setFigureName("Square");
                                            break;
-                        case"paintEllipse" : System.out.println("ellipse selectionné");
+                        case"paintEllipse" : System.out.println("ellipse selected");
                                              draw.setFigureName("Ellipse");
                                              break;
-                        case"paintCercle" : System.out.println("cercle selectionné");
+                        case"paintCercle" : System.out.println("circle selected");
                                             draw.setFigureName("Circle");
                                             break;
-                        case "Author": System.out.println("auteurs selectionné");
+                        case "Author": System.out.println("author selected");
                                         JOptionPane info = new JOptionPane();
                                         info.showInternalMessageDialog(info, "Auteur : Quentin SIMON","information",JOptionPane.INFORMATION_MESSAGE);
                                         break;
@@ -182,7 +182,7 @@ public class Window extends JFrame implements  ActionListener{
                                              draw.savedrawing(FileName);
                                      }
                                      else System.out.println("sauvegarde annulé");
-                                     System.out.println("save selectionné");break;
+                                     System.out.println("save selected");break;
                         case "Open" : JFileChooser rec = new JFileChooser();
                                       int open = rec.showOpenDialog(this);
                                        if (open == JFileChooser.APPROVE_OPTION) {
@@ -190,9 +190,9 @@ public class Window extends JFrame implements  ActionListener{
                                                 draw.opendrawing(FileName);
                                         }
                                        else System.out.println("ouverture fichier annulé");
-                                      System.out.println("Open selectionné"); break;
-                        case "Quit" : System.exit(0);System.out.println("Quit selectionné");break;
-                        case "New" : draw.getList().clear();repaint();System.out.println("New selectionné");break;
+                                      System.out.println("Open selected"); break;
+                        case "Quit" : System.exit(0);System.out.println("Quit selected");break;
+                        case "New" : draw.getList().clear();repaint();System.out.println("New selected");break;
                         case "undo" : draw.back_one_step();break;
                         default : break;
                 }
