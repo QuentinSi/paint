@@ -61,9 +61,9 @@ public class Window extends JFrame implements  ActionListener{
          principal.add(menu1);
 
          JMenu menu2 = new JMenu ("A propos");
-         JMenuItem auteurs = new JMenuItem("Auteurs");
-         auteurs.addActionListener(this);
-         menu2.add(auteurs);
+         JMenuItem author = new JMenuItem("Author");
+         author.addActionListener(this);
+         menu2.add(author);
          principal.add(menu2);
 
          //Déclaration tous les boutons de couleurs en bas de la page
@@ -171,7 +171,7 @@ public class Window extends JFrame implements  ActionListener{
                         case"paintCercle" : System.out.println("cercle selectionné");
                                             draw.setFigureName("Circle");
                                             break;
-                        case "Auteurs": System.out.println("auteurs selectionné");
+                        case "Author": System.out.println("auteurs selectionné");
                                         JOptionPane info = new JOptionPane();
                                         info.showInternalMessageDialog(info, "Auteur : Quentin SIMON","information",JOptionPane.INFORMATION_MESSAGE);
                                         break;
