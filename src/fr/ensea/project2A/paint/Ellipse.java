@@ -29,19 +29,19 @@ public class Ellipse extends Figure {
         else if (first.getX() < second.getX() & second.getY() < first.getY()) {
             Point firstBis = new Point(first.getX(), second.getY());
             Point secondBis = new Point(second.getX(), first.getY());
-            super.origine = firstBis;
+            super.origin = firstBis;
             semiAxysX = (secondBis.getX() - firstBis.getX());
             semiAxysY = (secondBis.getY() - firstBis.getY());
         } else if (second.getX() < first.getX() & second.getY() < first.getY()) {
             Point firstBis = new Point(second.getX(), second.getY());
             Point secondBis = new Point(first.getX(), first.getY());
-            super.origine = firstBis;
+            super.origin = firstBis;
             semiAxysX = (secondBis.getX() - firstBis.getX());
             semiAxysY = (secondBis.getY() - firstBis.getY());
         }else if (second.getX() < first.getX() & first.getY() < second.getY()) {
             Point firstBis = new Point(second.getX(), first.getY());
             Point secondBis = new Point(first.getX(), second.getY());
-            super.origine = firstBis;
+            super.origin = firstBis;
             semiAxysX = (secondBis.getX() - firstBis.getX());
             semiAxysY = (secondBis.getY() - firstBis.getY());
         }
@@ -51,7 +51,7 @@ public class Ellipse extends Figure {
     @Override
     protected void draw(Graphics g) {
         g.setColor(c);
-        g.fillOval(origine.getX(), origine.getY(), semiAxysX, semiAxysY);
+        g.fillOval(origin.getX(), origin.getY(), semiAxysX, semiAxysY);
     }
 
     @Override
@@ -59,12 +59,12 @@ public class Ellipse extends Figure {
         return "Ellipse{" +
                 "semiAxysX=" + semiAxysX +
                 ", semiAxysY=" + semiAxysY +
-                ", c=" + c + "origine"+ origine+
+                ", c=" + c + "origine"+ origin +
                 '}';
     }
 
     @Override
-    public void setOrigine(Point origin) {
-        super.setOrigine(origin);
+    public void setOrigin(Point origin) {
+        super.setOrigin(origin);
     }
 }

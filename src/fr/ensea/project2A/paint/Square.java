@@ -1,6 +1,7 @@
 package fr.ensea.project2A.paint;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public class Square extends Rectangle{
 
@@ -12,7 +13,7 @@ public class Square extends Rectangle{
     @Override
     protected void draw(Graphics g) {
         g.setColor(c);
-        g.fillRect(origine.getX(), origine.getY(), length, width);
+        g.fillRect(origin.getX(), origin.getY(), length, width);
     }
 
     @Override
@@ -33,24 +34,24 @@ public class Square extends Rectangle{
             length = width;
 
             if (first.getX() < second.getX() & second.getY() < first.getY()) { // tire en haut à droite
-                super.origine.setY(first.getY() - length);
+                super.origin.setY(first.getY() - length);
 
             } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
-                super.origine.setY(first.getY() - length);
+                super.origin.setY(first.getY() - length);
             }
         } else {
             width = length;
 
             if (second.getX() < first.getX() & first.getY() < second.getY()) { // Tire en bas a à gauche
-                super.origine.setX(first.getX() - width);
+                super.origin.setX(first.getX() - width);
             } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
-                super.origine.setX(first.getX() - width);
+                super.origin.setX(first.getX() - width);
             }
         }
     }
 
     @Override
     public String toString() {
-        return "Carre {"+ " origine "+ origine+ " lenght " + length + " width " + width+ " color " + c + '}';
+        return "Square {"+ " origine "+ origin + " lenght " + length + " width " + width+ " color " + c + '}';
     }
 }

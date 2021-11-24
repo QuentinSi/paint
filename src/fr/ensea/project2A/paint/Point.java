@@ -3,8 +3,8 @@ package fr.ensea.project2A.paint;
 import java.io.Serializable;
 
 public class Point implements Serializable {
-    Integer X;
-    Integer Y;
+    int X;
+    int Y;
 
     public Integer getX() {
         return X;
@@ -14,11 +14,11 @@ public class Point implements Serializable {
         return Y;
     }
 
-    public void setX(Integer x) {
+    public void setX(int x) {
         X = x;
     }
 
-    public void setY(Integer y) {
+    public void setY(int y) {
         Y = y;
     }
 

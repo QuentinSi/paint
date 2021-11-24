@@ -12,7 +12,7 @@ public class Circle extends Ellipse {
     @Override
     protected void draw(Graphics g) {
         g.setColor(c);
-        g.fillOval(origine.getX(), origine.getY(), semiAxysX, semiAxysY);
+        g.fillOval(origin.getX(), origin.getY(), semiAxysX, semiAxysY);
 
     }
 
@@ -34,18 +34,18 @@ public class Circle extends Ellipse {
             semiAxysY = semiAxysX;
 
             if (first.getX() < second.getX() & second.getY() < first.getY()) { // tire en haut à droite
-                super.origine.setY(first.getY() - semiAxysY);
+                super.origin.setY(first.getY() - semiAxysY);
 
             } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
-                super.origine.setY(first.getY() - semiAxysY );
+                super.origin.setY(first.getY() - semiAxysY );
             }
         } else {
             semiAxysX = semiAxysY;
 
             if (second.getX() < first.getX() & first.getY() < second.getY()) { // Tire en bas a à gauche
-                super.origine.setX(first.getX() - semiAxysX );
+                super.origin.setX(first.getX() - semiAxysX );
             } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
-                super.origine.setX(first.getX() - semiAxysX );
+                super.origin.setX(first.getX() - semiAxysX );
             }
         }
     }
