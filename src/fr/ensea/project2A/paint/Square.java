@@ -32,7 +32,6 @@ public class Square extends Rectangle{
         super.setBoundingBox(first, second);
         if (width < length) {
             length = width;
-
             if (first.getX() < second.getX() & second.getY() < first.getY()) { // tire en haut à droite
                 super.origin.setY(first.getY() - length);
 

@@ -8,7 +8,6 @@ public class Rectangle extends Figure {
     protected int width;
 
     public Rectangle(Color color, int px, int py) {
-
         super(color, new Point(px,py));
         setBoundingBox(0,0);
     }
@@ -21,30 +20,30 @@ public class Rectangle extends Figure {
 
     @Override
     protected void setBoundingBox(Point first, Point second) {
-        if(first.getX() < second.getX() & first.getY()<second.getY()){ //tire vers en bas à droite
+        if(first.getX() < second.getX() & first.getY()<second.getY()){
             width=(second.getX()- first.getX());
             length=(second.getY()-first.getY());
         }
-        else if(first.getX()< second.getX() & second.getY()< first.getY()){ // tire en haut à droite
-            Point firstBis=new Point(first.getX(), second.getY());
-            Point secondBis= new Point (second.getX(),first.getY());
+        else if (second.getX()< first.getX() & second.getY()< first.getY()){
+            Point firstBis= new Point (second.getX(), second.getY());
+            Point secondBis= new Point (first.getX(), first.getY());
             super.origin =firstBis;
-            width=(secondBis.getX()- firstBis.getX());
-            length=(secondBis.getY()-firstBis.getY());
+            width=(secondBis.getX()-firstBis.getX());
+            length=(secondBis.getY()- firstBis.getY());
         }
-        else if(second.getX()< first.getX() & first.getY()< second.getY()){ // Tire en bas a à gauche
+        else if(second.getX()< first.getX() & first.getY()< second.getY()){
             Point firstBis= new Point (second.getX(), first.getY());
             Point secondBis= new Point (first.getX(), second.getY());
             super.origin =firstBis;
             width=(secondBis.getX()-firstBis.getX());
             length=(secondBis.getY()- firstBis.getY());
         }
-        else if (second.getX()< first.getX() & second.getY()< first.getY()){ // tire en haut à gauche
-            Point firstBis= new Point (second.getX(), second.getY());
-            Point secondBis= new Point (first.getX(), first.getY());
+        else if(first.getX()< second.getX() & second.getY()< first.getY()){
+            Point firstBis=new Point(first.getX(), second.getY());
+            Point secondBis= new Point (second.getX(),first.getY());
             super.origin =firstBis;
-            width=(secondBis.getX()-firstBis.getX());
-            length=(secondBis.getY()- firstBis.getY());
+            width=(secondBis.getX()- firstBis.getX());
+            length=(secondBis.getY()-firstBis.getY());
         }
     }
 

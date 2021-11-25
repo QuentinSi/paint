@@ -1,6 +1,7 @@
 package fr.ensea.project2A.paint;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public class Circle extends Ellipse {
 
@@ -13,7 +14,6 @@ public class Circle extends Ellipse {
     protected void draw(Graphics g) {
         g.setColor(c);
         g.fillOval(origin.getX(), origin.getY(), semiAxysX, semiAxysY);
-
     }
 
     @Override
@@ -33,30 +33,25 @@ public class Circle extends Ellipse {
         if (semiAxysX < semiAxysY) {
             semiAxysY = semiAxysX;
 
-            if (first.getX() < second.getX() & second.getY() < first.getY()) { // tire en haut à droite
+            if (first.getX() < second.getX() & second.getY() < first.getY()) {
                 super.origin.setY(first.getY() - semiAxysY);
 
-            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) {
                 super.origin.setY(first.getY() - semiAxysY );
             }
         } else {
             semiAxysX = semiAxysY;
 
-            if (second.getX() < first.getX() & first.getY() < second.getY()) { // Tire en bas a à gauche
+            if (second.getX() < first.getX() & first.getY() < second.getY()) {
                 super.origin.setX(first.getX() - semiAxysX );
-            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) {
                 super.origin.setX(first.getX() - semiAxysX );
             }
         }
     }
     @Override
     public String toString() {
-        return "Circle{" +
-                "semiAxysX=" + semiAxysX +
-                ", semiAxysY=" + semiAxysY +
-                ", c=" + c +
-                '}';
-
+        return "Circle{" + "semiAxysX=" + semiAxysX + ", semiAxysY=" + semiAxysY + ", c=" + c +'}';
     }
 }
 

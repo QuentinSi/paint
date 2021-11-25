@@ -182,8 +182,7 @@ public class Window extends JFrame implements  ActionListener{
                                                 String FileName = rec.getSelectedFile().getAbsolutePath();
                                                 draw.opendrawing(FileName);
                                         }
-                                       else System.out.println("open file canceled\n");
-                                      System.out.println("Open selected"); break;
+                                       else System.out.println("open file canceled\n");break;
                         case "Quit" : System.exit(0);System.out.println("Quit selected");break;
                         case "New" : draw.getList().clear();repaint();System.out.println("New selected");break;
                         case "undo" : draw.back_one_step();System.out.println("Undo selected");break;

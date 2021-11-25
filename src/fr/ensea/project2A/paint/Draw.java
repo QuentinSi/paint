@@ -13,7 +13,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Draw extends JPanel implements MouseMotionListener, MouseListener, Serializable {
-
     private Color c;
     private ArrayList<Figure> list;
     private String figureName;
@@ -29,7 +28,6 @@ public class Draw extends JPanel implements MouseMotionListener, MouseListener, 
         addMouseListener(this);
         addMouseMotionListener(this);
         c=Color.black;
-
     }
 
     @Override
@@ -60,16 +58,12 @@ public class Draw extends JPanel implements MouseMotionListener, MouseListener, 
 
     @Override
     public void mouseReleased(MouseEvent e) {}
-
     @Override
     public void mouseMoved(MouseEvent e) {}
-
     @Override
     public void mouseClicked(MouseEvent e) {}
-
     @Override
     public void mouseEntered(MouseEvent e) {}
-
     @Override
     public void mouseExited(MouseEvent e) {}
 
@@ -122,5 +116,4 @@ public class Draw extends JPanel implements MouseMotionListener, MouseListener, 
         this.figureName=figureName;
     }
     public ArrayList<Figure> getList() { return list; }
-
 }
