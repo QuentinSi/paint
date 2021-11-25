@@ -32,18 +32,18 @@ public class Square extends Rectangle{
         super.setBoundingBox(first, second);
         if (width < length) {
             length = width;
-            if (first.getX() < second.getX() & second.getY() < first.getY()) { // tire en haut à droite
+            if (first.getX() < second.getX() & second.getY() < first.getY()) {
                 super.origin.setY(first.getY() - length);
 
-            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) {
                 super.origin.setY(first.getY() - length);
             }
         } else {
             width = length;
 
-            if (second.getX() < first.getX() & first.getY() < second.getY()) { // Tire en bas a à gauche
+            if (second.getX() < first.getX() & first.getY() < second.getY()) {
                 super.origin.setX(first.getX() - width);
-            } else if (second.getX() < first.getX() & second.getY() < first.getY()) { // tire en haut à gauche
+            } else if (second.getX() < first.getX() & second.getY() < first.getY()) {
                 super.origin.setX(first.getX() - width);
             }
         }

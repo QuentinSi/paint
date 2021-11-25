@@ -56,10 +56,6 @@ public class Ellipse extends Figure {
 
     @Override
     public String toString() {
-        return "Ellipse{" +
-                "semiAxysX=" + semiAxysX +
-                ", semiAxysY=" + semiAxysY +
-                ", c=" + c + "origine"+ origin +
-                '}';
+        return "Ellipse{" + "semiAxysX=" + semiAxysX + ", semiAxysY=" + semiAxysY + ", c=" + c + "origine"+ origin + '}';
     }
 }
